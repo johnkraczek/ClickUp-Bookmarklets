@@ -1,0 +1,22 @@
+{
+  "name": "fastdeps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/prompts.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "jest": "^27.4.5",
+    "jsdom": "^19.0.0",
+    "mustache": "^4.2.0",
+    "pug": "^3.0.2"
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "build": "pug -c -D --name-after-file ./src/templates --out ./build/pugTemplates"
+  },
+  "author": "John Kraczek",
+  "license": "MIT"
+}
