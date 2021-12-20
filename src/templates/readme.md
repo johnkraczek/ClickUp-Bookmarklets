@@ -5,7 +5,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -15,44 +14,14 @@
 
   <p align="center">
     A weekend project you may find useful. 
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/johnkraczek/ClickUp-Bookmarklets">View Demo</a>
   </p>
 </div>
-
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-As I was devleoping tasks and a project plan for my team, I was asked to develop a gantt chart to see where the tasks we have collected so far would take us. We estimated a rough duration for each task and inserted thoes into the 'time estimate'. But we were unable to easily adjust start and end dates. I found [this feature request](https://clickup.canny.io/feature-requests/p/automatic-start-datedue-date-based-on-start-date-due-date-or-duration) and [this one](https://clickup.canny.io/feature-requests/p/calculate-due-date-based-on-dependencies) but both have not even been started yet. 
+As I was devleoping tasks and a project plan for my team inside the project management tool ClickUp, I was asked to develop a gantt chart to see where the tasks we have collected so far would take us time wise. We estimated a rough duration for each task and inserted those into the 'time estimate'. But we were unable to easily adjust start and end dates. I found [this feature request](https://clickup.canny.io/feature-requests/p/automatic-start-datedue-date-based-on-start-date-due-date-or-duration) and [this one](https://clickup.canny.io/feature-requests/p/calculate-due-date-based-on-dependencies) but both have not even been started yet. 
 
 Not to be deterred, and deciding to add polish to some other bookmarklets I already had for ClickUp, I took a weekend and put this together. It leverages the ClickUp API to fetch tasks, Update Start & Due Dates, and more easily update task dependancies. 
 
@@ -67,7 +36,7 @@ Here are some of the libraries & frameworks used in the project.
 * [Nodejs](https://nodejs.org/en/)
 * [Pug.js](https://github.com/pugjs/pug)
 * [Bookmarklet](https://github.com/mrcoles/bookmarklet)
-* [Readme Template](https://github.com/othneildrew/Best-README-Template)
+* [Readme Template](https://github.com/johnkraczek/ClickUp-Bookmarklets)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -76,7 +45,9 @@ Here are some of the libraries & frameworks used in the project.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-If you are not interested in compiling the bookmarklet on your own and just want to use it you can drag these links to your bookmark bar. After you have the bookmarklet you can navigate to [ClickUp](https://app.clickup.com/) and click the bookmarklet[^1]. 
+Watch my << Video Pending >> Video for an explainer on what this does and how to use it. 
+
+If you are not interested in compiling the bookmarklet on your own and just want to use it you can create a new bookmark and copy the bookmarklet to the URL. After you have the bookmarklet you can navigate to [ClickUp](https://app.clickup.com/) and click the bookmarklet[^1]. 
 
 [^1]: Personally, I look to understand what is happening with any code I find on the internet. I would recommend looking through how these bookmarklets are put together and compile them yourself. This is especially important when dealing with your ClickUp Api key which should be treated like a password, and if you don't know how something works it could be compromized. 
 
@@ -86,11 +57,13 @@ If you are not interested in compiling the bookmarklet on your own and just want
 ### Due Dates:
 ----------
 
-  <a href="{{dates}}">
-    <img src="images/CU-Due-Dates.png" alt="Cu-Due-Dates">
-  </a>
+Copy and paste the following code into your bookmark to creat a bookmarklet. 
 
 This bookmarklet will update the start and due dates of the blocked dependancies by adding the task estimate time to the start date. 
+
+``` 
+{{{dates}}}
+```
 
 * Prior to clicking on this bookmarklet make sure you have setup your task dependancies & time estimates. 
 * Next, open the first task and set a Start Date. 
@@ -102,11 +75,13 @@ This bookmarklet will update the start and due dates of the blocked dependancies
 ### Task Dependancy Manager
 ----------
 
-  <a href="{{deps}}">
-    <img src="images/CU-Due-Dates.png" alt="Cu-Due-Dates">
-  </a>
-
 This bookmarklet will add 2 columns to a ClickUp List. You can then click the task ID in the list and then click on the task that depends on it. The dependancy will then be created. Much simpler than having to search for a task in the popup dialogue. 
+
+
+``` 
+{{{deps}}}
+```
+
 
 
 ### Installation
@@ -135,9 +110,20 @@ This bookmarklet will add 2 columns to a ClickUp List. You can then click the ta
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Check out my YouTube video on these bookmarklets. I cover the process start to finish of using & hacking on this project. 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<< Video Pending >>
+
+After changing anything or updating the code, you can run 
+
+``` 
+  npm run build
+```
+
+to compile your javascript into the two bookmarklets. 
+
+You will find the compiled code under build/bookmarks, or you can check the updated readme.md which will have also been updated using that command.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -173,9 +159,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 John Kraczek - [@johnkraczek](https://twitter.com/johnkraczek)
 
-YouTube - [@johnkraczek](https://youtube.com/johnkraczek)
-
-[![Youtube][youtubeSubs]][youtubeChannel]
+YouTube - [@johnkraczek][youtubeChannel] [![Youtube][youtubeSubs]][youtubeChannel]
 
 Project Link: [https://github.com/johnkraczek/ClickUp-Bookmarklets](https://github.com/johnkraczek/ClickUp-Bookmarklets)
 
@@ -185,17 +169,19 @@ Project Link: [https://github.com/johnkraczek/ClickUp-Bookmarklets](https://gith
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/johnkraczek/ClickUp-Bookmarklets?style=for-the-badge
+[contributors-url]: https://github.com/johnkraczek/ClickUp-Bookmarklets/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/johnkraczek/ClickUp-Bookmarklets?style=for-the-badge
+[forks-url]: https://github.com/johnkraczek/ClickUp-Bookmarklets/network/members
+[stars-shield]: https://img.shields.io/github/stars/johnkraczek/ClickUp-Bookmarklets?style=for-the-badge
+[stars-url]: https://github.com/johnkraczek/ClickUp-Bookmarklets/stargazers
+[issues-shield]: https://img.shields.io/github/issues/johnkraczek/ClickUp-Bookmarklets?style=for-the-badge
+[issues-url]: https://github.com/johnkraczek/ClickUp-Bookmarklets/issues
+[license-shield]: https://img.shields.io/github/license/johnkraczek/ClickUp-Bookmarklets?style=for-the-badge
+[license-url]: https://github.com/johnkraczek/ClickUp-Bookmarklets/blob/master/LICENSE.txt
 
 
 [youtubeSubs]: https://img.shields.io/youtube/channel/subscribers/UCIxGChidvUMOwedA8tIB7JQ?style=for-the-badge
 [youtubeChannel]: https://youtube.com/johnkraczek
+
+ 
