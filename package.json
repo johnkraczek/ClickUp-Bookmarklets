@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "jest --verbose",
-    "build": "pug -c -D --name-after-file ./src/templates --out ./build/pugTemplates"
+    "build": "node ./build.js"
   },
   "author": "John Kraczek",
   "license": "MIT"
