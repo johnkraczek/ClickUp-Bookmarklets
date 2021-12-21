@@ -1,31 +1,38 @@
-let fs = require("fs")
-let concat = require('concat');
-let { exec } = require('child_process');
-let { render } = require("mustache");
+const delay = (ms) => new Promise(r => setTimeout(r, ms));
 
-exec('pug -c -D --name-after-file ./src/templates --out ./build/pugTemplates', (err, stdout, stderr) => {
-    if (err) { console.log(err); return;}
-    console.log(`stdout: ${stdout}`);
-});
+(async () => {
+    console.log('run');
+    let fs = require("fs");
+    let concat = require('concat');
+    let { exec } = require('child_process');
+    let { render } = require("mustache");
 
-concat(['src/auth.js', 'src/setDates.js', 'build/pugTemplates/option.js'], 'build/js/built-dates.js')
-concat(['src/auth.js', 'src/deps.js', 'build/pugTemplates/option.js'], 'build/js/built-deps.js')
+    exec('pug -c -D --name-after-file ./src/templates --out ./build/pugTemplates', (err, stdout, stderr) => {
+        if (err) { console.log(err); return; }
+        if (stdout) console.log(`stdout: ${stdout}`);
+    });
 
-exec('bookmarklet build/js/built-dates.js > build/bookmarks/dates-bookmark', (err, stdout, stderr) => {
-    if (err) { console.log(err); return;}
-    console.log(`stdout: ${stdout}`);
-});
+    await delay(1000);
+    concat(['src/setDates.js', 'src/auth.js', 'build/pugTemplates/option.js'], 'build/js/built-dates.js')
+    concat(['src/deps.js', 'src/auth.js', 'build/pugTemplates/option.js', 'build/pugTemplates/col-header.js'], 'build/js/built-deps.js')
 
-exec('bookmarklet build/js/built-deps.js > build/bookmarks/deps-bookmark', (err, stdout, stderr) => {
-    if (err) { console.log(err); return;}
-    console.log(`stdout: ${stdout}`);
-});
+    await delay(1000);
+    exec('bookmarklet build/js/built-dates.js > build/bookmarks/dates-bookmark', (err, stdout, stderr) => {
+        if (err) { console.log(err); return; }
+        if (stdout) console.log(`stdout: ${stdout}`);
+    });
 
-let data = {
-    deps: fs.readFileSync("build/bookmarks/deps-bookmark").toString(),
-    dates: fs.readFileSync("build/bookmarks/dates-bookmark").toString()
-}
+    exec('bookmarklet build/js/built-deps.js > build/bookmarks/deps-bookmark', (err, stdout, stderr) => {
+        if (err) { console.log(err); return; }
+        if (stdout) console.log(`stdout: ${stdout}`);
+    });
+    await delay(1000);
 
-let template = fs.readFileSync("src/templates/readme.md").toString()
-let output = render(template, data);
-fs.writeFileSync('readme.md', output);
+    let dates = await fs.readFileSync("build/bookmarks/dates-bookmark").toString();
+    let deps = await fs.readFileSync("build/bookmarks/deps-bookmark").toString();
+
+    let template = fs.readFileSync("src/templates/readme.md").toString();
+    let output = render(template, { dates, deps });
+    fs.writeFileSync('readme.md', output);
+
+})();

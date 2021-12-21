@@ -1,3 +1,11 @@
+// ==Bookmarklet==
+// @name Clickup Set Date
+// https://github.com/johnkraczek/ClickUp-Bookmarklets
+// @author John Kraczek
+// @script !loadOnce https://cdn.jsdelivr.net/npm/sweetalert2@11
+// @script !loadOnce https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js
+// ==/Bookmarklet==
+
 
 async function getTask({ thisID, StartDate = 0, auth }) {
   try {
@@ -63,11 +71,11 @@ function getEstimate(start, estimate) {
   return (start + estimate);
 }
 
-
-const delay = (ms) => { new Promise(res => setTimeout(res, ms))};
+const delay = ms => new Promise(r => setTimeout(r, ms));
 
 
 (async () => {
+  console.log('ran main');
   let correctLocation = await checkBrowser();
   if (!correctLocation) {
     return false;
@@ -88,10 +96,11 @@ const delay = (ms) => { new Promise(res => setTimeout(res, ms))};
         confirmButtonText: 'Learn More',
         timerProgressBar: true,
         position: 'top-end',
-        timer: 6000
+        timer: 6000,
+        width: 600
       }).then((res) => {
         if (res.isConfirmed) {
-          window.open("https://www.geeksforgeeks.org", "_blank");
+          window.open("https://github.com/johnkraczek/ClickUp-Bookmarklets/blob/master/troubleshooting.md", "_blank");
         }
       })
       return false;
@@ -101,5 +110,4 @@ const delay = (ms) => { new Promise(res => setTimeout(res, ms))};
     thisID,
     auth: apikey
   });
-})()
-
+})();
