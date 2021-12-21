@@ -40,10 +40,14 @@ async function getAPIKeyFromUser(location) {
   let cu_apikey = await Queue.fire({
     title: 'Need ClickUp API Key',
     confirmButtonText: 'Start',
-    input: 'text',
+    input: 'password',
     text: 'What is your ClickUp API KEY',
     footer: '<a href="">What does it mean?</a>',
     currentProgressStep: 1,
+    inputAttributes: {
+      autocapitalize: 'off',
+      autocorrect: 'off'
+    },
     preConfirm: (value) => {
       if (!value) {
         Swal.showValidationMessage(
