@@ -95,7 +95,7 @@ async function checkBrowser() {
       showCloseButton: true,
       showCancelButton: true,
       cancelButtonText: 'Nevermind',
-      footer: '<a href="">Learn More?</a>'
+      footer: '<a href="https://github.com/johnkraczek/ClickUp-Bookmarklets/blob/master/troubleshooting.md">Learn More?</a>'
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.href = 'https://app.clickup.com/'
@@ -117,7 +117,7 @@ function addOptions() {
       Swal.fire({
         icon: 'question',
         title: 'Do you want to clear your API Key from the browser?',
-        footer: 'Learn More',
+        footer: '<a href="https://github.com/johnkraczek/ClickUp-Bookmarklets/blob/master/troubleshooting.md">Learn More?</a>',
         denyButtonText: "Nevermind",
         confirmButtonText: "Yeah!",
         showDenyButton: true,
