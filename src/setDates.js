@@ -62,6 +62,16 @@ async function updateTask({ thisID, StartDate, EndDate, auth }) {
   }
 }
 
+// some work on the logic here would probably make things better, 
+/**
+ * The problem is that when you say 2 days time estimate to clickup, it doesnt store 48hrs
+ * by default it stores 8 hours per day for a total of 16 hours. If we use 
+ * this value our end-date will be way short. What we need to do is to check 
+ * if the time estimate is greater than 8 hours, If so we need to figure out how 
+ * many 8 hour periods that represents and then add that many 24 hour periods
+ * Perhaps a better implementation of this would work better. comments?
+ */
+
 function getEstimate(start, estimate) {
   if (estimate > 28800000) {
     workday = Math.round(estimate / 28800000) - 1;
