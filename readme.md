@@ -17,7 +17,8 @@
     <a href="https://youtu.be/bzbYxBVPnyo">View Demo</a>
   </p>
 </div>
-[![View Demo](https://user-images.githubusercontent.com/3604887/147630780-6bb54ed9-73c1-4cf9-9eb9-9c8813b51a6b.png)](https://youtu.be/bzbYxBVPnyo)
+
+[![View Demo][youtube-video-thumbnail]](https://youtu.be/bzbYxBVPnyo)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -46,7 +47,7 @@ Here are some of the libraries & frameworks used in the project.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Watch my << Video Pending >> Video for an explainer on what this does and how to use it. 
+Watch my [Youtube Video](https://youtu.be/bzbYxBVPnyo) for an explainer on what this does and how to use it. 
 
 If you are not interested in compiling the bookmarklet on your own and just want to use it you can create a new bookmark and copy the bookmarklet to the URL. After you have the bookmarklet you can navigate to [ClickUp](https://app.clickup.com/) and click the bookmarklet[^1]. 
 
@@ -115,7 +116,7 @@ javascript:(function()%7Bfunction%20callback()%7Bfunction%20e()%7Bfunction%20e(e
 
 Check out my YouTube video on these bookmarklets. I cover the process start to finish of using & hacking on this project. 
 
-[![View Demo](https://user-images.githubusercontent.com/3604887/147630780-6bb54ed9-73c1-4cf9-9eb9-9c8813b51a6b.png)](https://youtu.be/bzbYxBVPnyo)
+[![View Demo][youtube-video-thumbnail]](https://youtu.be/bzbYxBVPnyo)
 
 After changing anything or updating the code, you can run 
 
@@ -168,10 +169,9 @@ Project Link: [https://github.com/johnkraczek/ClickUp-Bookmarklets](https://gith
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
+[youtube-video-thumbnail]: https://user-images.githubusercontent.com/3604887/147631358-1c752e3e-0f0c-4b27-b405-2c41f9cc7935.png
 [contributors-shield]: https://img.shields.io/github/contributors/johnkraczek/ClickUp-Bookmarklets?style=for-the-badge
 [contributors-url]: https://github.com/johnkraczek/ClickUp-Bookmarklets/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/johnkraczek/ClickUp-Bookmarklets?style=for-the-badge
