@@ -14,9 +14,10 @@
 
   <p align="center">
     A weekend project you may find useful. 
-    <a href="https://github.com/johnkraczek/ClickUp-Bookmarklets">View Demo</a>
+    <a href="https://youtu.be/bzbYxBVPnyo">View Demo</a>
   </p>
 </div>
+[![View Demo](https://user-images.githubusercontent.com/3604887/147630780-6bb54ed9-73c1-4cf9-9eb9-9c8813b51a6b.png)](https://youtu.be/bzbYxBVPnyo)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -114,7 +115,7 @@ javascript:(function()%7Bfunction%20callback()%7Bfunction%20e()%7Bfunction%20e(e
 
 Check out my YouTube video on these bookmarklets. I cover the process start to finish of using & hacking on this project. 
 
-<< Video Pending >>
+[![View Demo](https://user-images.githubusercontent.com/3604887/147630780-6bb54ed9-73c1-4cf9-9eb9-9c8813b51a6b.png)](https://youtu.be/bzbYxBVPnyo)
 
 After changing anything or updating the code, you can run 
 
